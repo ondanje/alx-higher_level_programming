@@ -11,7 +11,9 @@ int check_cycle(listint_t *list)
 
 	while (fast_ptr != NULL && fast_ptr->next != NULL)
 	{
+		/*slow_ptr moving one step at a time*/
 		slow_ptr = slow_ptr->next;
+		/*fast_ptr moving two steps*/
 		fast_ptr = fast_ptr->next->next;
 
 		if (slow_ptr == fast_ptr)
