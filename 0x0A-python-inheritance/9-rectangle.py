@@ -12,7 +12,7 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """initialize the instances of the class :width and height """
-        
+
         self.__width = width
         self.__height = height
 
@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
 
     def area(self):
-        """method to calculate the area"""
+        """method to calculate the area of a rectangle"""
 
         return self.__height * self.__width
 
