@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+""" class MyInt that inherits from int:"""
 
 
 class MyInt(int):
@@ -21,6 +21,8 @@ class MyInt(int):
             self.__my_int = my_int
 
     def __eq__(self, other):
+        """method to determine the equal"""
+        
         if self.my_int == other:
             return False
         else:
