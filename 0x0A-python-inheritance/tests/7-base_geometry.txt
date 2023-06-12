@@ -1,0 +1,18 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> BaseGeometry().integer_validator("Jake", 12)
+
+>>> BaseGeometry().integer_validator(5, 6)
+Traceback (most recent call last):
+		...
+TypeError: name must be a string
+
+>>> BaseGeometry().integer_validator("Jake" , "john")
+Traceback (most recent call last):
+		...
+TypeError: value must be an integer
+
+>>> BaseGeometry().integer_validator("Jake", -2)
+Traceback (most recent call last):
+		...
+ValueError: number must be greater than 0
