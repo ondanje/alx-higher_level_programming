@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""function that writes a string"""
 
 
 def write_file(filename="", text=""):
