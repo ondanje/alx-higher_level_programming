@@ -1,0 +1,38 @@
+#0-add_integer.txt
+======================
+
+using 0-add_integer.py
+
+
+``add_integer()`` returns the sum of its arguments.
+
+importing the function add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(4, 5)
+9
+
+>>> add_integer(2.0, 4)
+6
+
+>>> add_integer(2, 6.0)
+8
+
+>>> add_integer(-2, 4)
+2
+
+>>> add_integer(-2, -2)
+-4
+
+>>> add_integer(1)
+99
+
+>>> add_integer(None)
+Traceback (most recent call last):
+		...
+TypeError: a must be an integer
+
+>>> add_integer(6, "b")
+Traceback (most recent call last):
+		...
+TypeError: b must be an integer
