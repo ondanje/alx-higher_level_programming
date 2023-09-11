@@ -2,6 +2,7 @@
 
 >>> my_list = MyList()
 >>> my_list.print_sorted()
+>>>print(my_list)
 []
 
 >>> my_list.append(5)
@@ -32,3 +33,8 @@ True
 >>> my_list.append(-50)
 >>> my_list.print_sorted()
 [-50, -1, 1, 5, 51]
+
+>>> a = []
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[]
