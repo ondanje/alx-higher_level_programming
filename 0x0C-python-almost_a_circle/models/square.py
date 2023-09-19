@@ -51,7 +51,7 @@ class Square(Rectangle):
             assigns values to attributes
             Args:
                 *args: variable
-                **kwargs - kwrgs
+                **kwargs - kwargs
         """
         if args:
             if len(args) >= 1:

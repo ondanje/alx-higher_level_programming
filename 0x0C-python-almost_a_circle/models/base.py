@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class base"""
 import json
+import csv
 
 
 class Base:
@@ -39,7 +40,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
@@ -64,6 +65,62 @@ class Base:
                 json_string = file.read()
                 dictionaries = cls.from_json_string(json_string)
                 instances = [cls.create(**data) for data in dictionaries]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+            save to file csv
+        """
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == 'Rectangle':
+                    data = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == 'Square':
+                    data = [obj.id, obj.size, obj.x, obj.y]
+                else:
+                    raise ValueError("Unsupported class type")
+                writer.writerow(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+            load from file csv
+        """
+        filename = cls.__name__ + ".csv"
+
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    if cls.__name__ == 'Rectangle':
+                        data = {
+                            'id': int(row[0]),
+                            'width': int(row[1]),
+                            'height': int(row[2]),
+                            'x': int(row[3]),
+                            'y': int(row[4])
+                        }
+                    elif cls.__name__ == 'Square':
+                        data = {
+                            'id': int(row[0]),
+                            'size': int(row[1]),
+                            'x': int(row[2]),
+                            'y': int(row[3])
+                        }
+                    else:
+                        raise ValueError("Unsupported class type")
+                    instance = cls.create(**data)
+                    instances.append(instance)
                 return instances
         except FileNotFoundError:
             return []
