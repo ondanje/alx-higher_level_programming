@@ -3,5 +3,5 @@
 --Results must be sorted in ascending order by cities.id
 --You can use only one SELECT statement
 SELECT cities.id, cities.name, states.name
-FROM cities NATURAL JOIN states
+FROM cities JOIN states ON cities.state_id = state_id
 ORDER BY cities.id ASC;
