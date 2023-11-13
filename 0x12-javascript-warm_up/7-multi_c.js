@@ -1,13 +1,12 @@
 #!/usr/bin/node
 // printing I love c 'x times'
 
-const x = process.argv[2];
-const parsedInteger = parseInt(x);
+const sentence = 'C is fun';
 
-if (!isNaN(parsedInteger)) {
-  for (let i = 0; i <= parsedInteger; i++) {
-    console.log('C is fun');
-  }
-} else {
+if (isNaN(process.argv[2])) {
   console.log('Missing number of occurrences');
+} else {
+  for (let i = 0; i < parseInt(process.argv[2]); i++) {
+    console.log(sentence);
+  }
 }
