@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// multiline printing
 
 console.log('C is fun');
 console.log('Python is cool');

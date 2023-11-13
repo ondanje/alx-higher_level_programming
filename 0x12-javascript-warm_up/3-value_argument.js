@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// print the first argument
 
 const numOfArgs = process.argv;
 

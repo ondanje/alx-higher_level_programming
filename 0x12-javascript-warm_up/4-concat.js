@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// concat two string arguments
 
 const numOfArgs = process.argv;
 
