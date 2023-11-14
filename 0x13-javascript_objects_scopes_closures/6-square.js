@@ -10,7 +10,7 @@ class Square extends square {
     if (c === undefined) {
       c = 'X';
     }
-    this.charPrint(c);
+    this.print(c);
   }
 }
 
