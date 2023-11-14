@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// unction that prints the number of arguments already printed and the new argument value
+// function that prints the number of arguments already printed and the new argument value
 
 exports.logMe = function logMe (item) {
   // Check if the counter property exists on the 'logMe' function
