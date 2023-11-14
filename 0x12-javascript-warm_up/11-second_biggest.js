@@ -7,5 +7,5 @@ if (process.argv.length <= 3) {
   const numbers = process.argv.slice(2).map(arg => parseInt(arg));
   const sortedNumbers = numbers.sort((a, b) => b - a);
 
-  console.log(sortedNumbers[0]);
+  console.log(sortedNumbers[1]);
 }
