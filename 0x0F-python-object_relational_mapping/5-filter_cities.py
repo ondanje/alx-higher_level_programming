@@ -43,7 +43,7 @@ if __name__ == "__main__":
         if x < executed_rows:
             print(end=', ')
         x += 1
-        
+
     print()
     cur.close()
     db.close()
