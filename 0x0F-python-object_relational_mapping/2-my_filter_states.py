@@ -10,8 +10,8 @@ from sys import argv
 
 if __name__ == "__main__":
     if len(argv) != 5:
-        print('Usage: \
-            {} <username> <password> <database> <state name>'.format(argv[0]))
+        print('Usage:{}\
+            <username> <password> <database> <state name>'.format(argv[0]))
         exit(1)
 
     username = argv[1]
@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' \
-        ORDER BY id".format(state_name)
+    query = "SELECT * FROM states WHERE states.name LIKE BINARY \
+        '{}' ORDER BY id".format(state_name)
     cur.execute(query)
 
     rows = cur.fetchall()
