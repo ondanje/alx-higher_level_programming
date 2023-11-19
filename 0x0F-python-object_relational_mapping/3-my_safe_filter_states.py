@@ -2,7 +2,7 @@
 """
 script that takes in an argument and displays all values in the
 states table of hbtn_0e_0_usa where name matches the argument
-vulnerable to SQL injection
+safe from SQL injection
 """
 
 import MySQLdb
@@ -29,9 +29,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' \
-        ORDER BY id".format(state_name)
-    cur.execute(query)
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
+    cur.execute(query, (state_name,))
 
     rows = cur.fetchall()
 
