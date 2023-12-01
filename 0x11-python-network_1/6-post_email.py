@@ -7,14 +7,14 @@ displays the body of the response.
 import sys
 import requests
 
-url = sys.argv[1]
-email = sys.argv[2]
+if __name__ == "__main__":
+    url = sys.argv[1]
+    email = sys.argv[2]
 
-data = {'email': email}
+    data = {'email': email}
 
-try:
-    response = requests.post(url, data=data)
-
-    print(response.text)
-except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+    try:
+        response = requests.post(url, data=data)
+        print(response.text)
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
