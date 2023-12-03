@@ -24,7 +24,7 @@ if __name__ == "__main__":
         commits = response.json()
 
         count = 0
-        for commit in reversed(commits):
+        for commit in commits:
             sha = commit['sha']
             author_name = commit['commit']['author']['name']
             print(f"{sha}: {author_name}")
